@@ -1,0 +1,37 @@
+Résumé : Algorithme Ford-Johnson (Merge-Insertion Sort)
+
+L'algorithme trie une collection en minimisant le nombre de comparaisons. Il fonctionne en plusieurs étapes clés.
+
+1. Groupement et Tri par Paires
+
+   On prend la liste d'éléments à trier. Si elle contient moins de deux éléments, le tri est terminé (cas de base).
+
+    On groupe les éléments en paires. S'il y a un nombre impair d'éléments, le dernier est mis de côté (c'est le straggler).
+
+    Dans chaque paire, on compare les deux éléments et on les ordonne, en plaçant systématiquement le plus grand en premier.
+
+2. Appel Récursif
+
+    On crée une nouvelle liste, la mainChain, qui contient uniquement les plus grands éléments de chaque paire.
+
+    On lance récursivement l'algorithme sur cette mainChain.
+
+    Point clé : On attend que cet appel récursif soit terminé. À son retour, la mainChain est parfaitement triée.
+
+3. Préparation à l'Insertion
+
+    Une fois la mainChain triée, on prépare la liste des éléments restants, la liste pend.
+
+    La liste pend contient les plus petits éléments de chaque paire, ainsi que le straggler (s'il existe). Ces éléments sont ordonnés en fonction de la position de leur "grand frère" dans la mainChain qui vient d'être triée.
+
+4. Insertion Optimisée avec Jacobsthal
+
+    On effectue l'insertion des éléments de pend dans la mainChain triée.
+
+    L'ordre d'insertion n'est pas séquentiel, mais est dicté par la séquence des nombres de Jacobsthal. Cet ordre est calculé pour être le plus efficace possible en termes de comparaisons.
+
+    Pour chaque élément de pend, on trouve sa position exacte dans la mainChain à l'aide d'une recherche binaire (lower_bound) avant de l'insérer.
+
+5. Résultat Final
+
+    Une fois tous les éléments de pend insérés, la mainChain contient tous les éléments de départ, parfaitement triés.
