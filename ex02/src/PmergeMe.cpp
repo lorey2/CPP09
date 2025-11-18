@@ -6,7 +6,7 @@
 /*   By: lorey <lorey@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/07 20:22:39 by lorey             #+#    #+#             */
-/*   Updated: 2025/07/07 22:49:02 by lorey            ###   LAUSANNE.ch       */
+/*   Updated: 2025/11/18 18:31:42 by lorey            ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ void PmergeMe::run() {
 //so private functions next
 
 
-//this function is there to fill the deque and the vector
+//this function is here to fill the deque and the vector
 void PmergeMe::parseInput() {
 	if (this->_argc < 2) {
 		throw std::runtime_error("Error: one or zero arg provided. Program is irrelevant :)");

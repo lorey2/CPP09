@@ -6,7 +6,7 @@
 /*   By: lorey <lorey@student.42lausanne.ch>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/27 02:56:46 by lorey             #+#    #+#             */
-/*   Updated: 2025/06/27 22:23:07 by lorey            ###   LAUSANNE.ch       */
+/*   Updated: 2025/11/18 18:08:18 by lorey            ###   LAUSANNE.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,10 @@ bool RPN::isOperator(char a) {
 	return(a == '-' || a == '+' || a == '*' || a == '/');
 }
 
+// we iter on every elem of expr
+// we put numbers in a stack
+// if there is an operation we make in on the two last elements added to the stack
+// that's all
 double RPN::calcul(const std::string& expr) {
 	size_t i = -1;
 	double num1;
